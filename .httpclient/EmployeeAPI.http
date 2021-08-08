@@ -1,0 +1,142 @@
+### Create Employee
+POST http://localhost:8080/employee/
+Content-Type: application/json
+
+{
+  "salary": 50000,
+  "person": {
+    "id": "60608261",
+    "name": "Jorge",
+    "lastName": "Montes",
+    "address": "Cll 45 # 45",
+    "cellphone": "+573101234567",
+    "cityName": "Envigado"
+  },
+  "position": {
+    "name": "dev"
+  }
+}
+
+> {%
+client.global.set('employee_id',response.body.id);
+%}
+
+### Update Employee
+PUT http://localhost:8080/employee/{{employee_id}}
+Content-Type: application/json
+
+{
+  "salary": 10000,
+  "person": {
+    "id": "654231",
+    "name": "Linus",
+    "lastName": "Torvals",
+    "address": "Very Far",
+    "cellphone": "+165655814",
+    "cityName": "Faraway"
+  },
+  "position": {
+    "name": "dev"
+  }
+}
+
+
+### Delete the Employee
+DELETE http://localhost:8080/employee/{{employee_id}}
+
+
+### Create more employees
+POST http://localhost:8080/employee/
+Content-Type: application/json
+
+{
+  "salary": 70000,
+  "person": {
+    "id": "60608261",
+    "name": "Jorge",
+    "lastName": "Montes",
+    "address": "Cll 45 # 45",
+    "cellphone": "+573101234567",
+    "cityName": "Envigado"
+  },
+  "position": {
+    "name": "architect"
+  }
+}
+
+### Create more employees
+POST http://localhost:8080/employee/
+Content-Type: application/json
+
+{
+  "salary": 50000,
+  "person": {
+    "id": "60608261",
+    "name": "Marcela",
+    "lastName": "Mendieta",
+    "address": "Cll 6584",
+    "cellphone": "+573100004567",
+    "cityName": "Berlin"
+  },
+  "position": {
+    "name": "dev"
+  }
+}
+
+### Create more employees
+POST http://localhost:8080/employee/
+Content-Type: application/json
+
+{
+  "salary": 70020,
+  "person": {
+    "id": "60608261",
+    "name": "Jaime",
+    "lastName": "Serrano",
+    "address": "Cll 45 # 45",
+    "cellphone": "+573101234567",
+    "cityName": "Gotica"
+  },
+  "position": {
+    "name": "architect"
+  }
+}
+
+### Create more employees
+POST http://localhost:8080/employee/
+Content-Type: application/json
+
+{
+  "salary": 80040,
+  "person": {
+    "id": "60608261",
+    "name": "Lucy Fernanda",
+    "lastName": "Jaimes",
+    "address": "Cll 658d4",
+    "cellphone": "+573100004567",
+    "cityName": "Berlin"
+  },
+  "position": {
+    "name": "dev"
+  }
+}
+
+### Find All with no filters
+GET http://localhost:8080/employee
+Content-Type: application/json
+
+### Find All with person filter
+GET http://localhost:8080/employee?personName=org
+Content-Type: application/json
+
+### Find All with position filter
+GET http://localhost:8080/employee?positionName=de
+Content-Type: application/json
+
+### Find All with both filters
+GET http://localhost:8080/employee?positionName=ar&personName=org
+Content-Type: application/json
+
+### Find all positions
+GET http://localhost:8080/position
+Content-Type: application/json
